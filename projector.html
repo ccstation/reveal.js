@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>主日崇拜</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/church.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <section data-markdown="worship/worship0517.md"
+         data-separator="^---$"
+         data-separator-vertical="^\n\n"
+         data-separator-notes="^Note:"
+         data-charset="utf-8">
+      </section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+        controls: false,
+        hash: true,
+        center: false,
+        transition: 'fade',
+        progress: false,
+        multiplex: {
+          secret: null, 
+          id: '92036f85335b2115', 
+          url: 'https://io.ccstation.cc'
+        },
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js', async: true },
+		      { src: 'plugin/multiplex/client.js', async: true }
+				]
+			});
+
+			Reveal.addEventListener( 'videoevent', function( event ) {
+
+				worshipVideo = document.getElementById("worship_video");
+				switch (event.action) {
+					case "play":
+						if (worshipVideo.paused) {
+							worshipVideo.play();
+						} else {
+							worshipVideo.pause();
+						}
+						break;
+					case "fast_forward":
+						worshipVideo.currentTime = worshipVideo.currentTime + 30;
+						break;
+					case "rewind":
+						worshipVideo.currentTime = worshipVideo.currentTime - 30;
+						break;
+					case "restart":
+						worshipVideo.currentTime = 0;
+						break;
+				}
+
+			} );
+		</script>
+	</body>
+</html>

@@ -19,6 +19,22 @@
 
 	};
 
+	function customEvent(e) {
+
+		var messageData = {
+			type: e.type,
+			event: e,
+			secret: multiplex.secret,
+			socketId: multiplex.id
+		};
+
+		socket.emit( 'multiplex-statechanged', messageData );
+
+	};
+
+	// post once the page is loaded, so the client follows also on "open URL".
+	window.addEventListener( 'load', post );
+
 	// Monitor events that trigger a change in state
 	Reveal.addEventListener( 'slidechanged', post );
 	Reveal.addEventListener( 'fragmentshown', post );
@@ -28,4 +44,5 @@
 	Reveal.addEventListener( 'paused', post );
 	Reveal.addEventListener( 'resumed', post );
 
+	Reveal.addEventListener( 'videoevent', customEvent );
 }());

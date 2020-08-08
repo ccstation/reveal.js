@@ -1,0 +1,68 @@
+
+.reveal {
+  font-family: "Noto Sans", "Noto Sans CJK TC", sans-serif;
+  font-size: 72px;
+  font-weight: bold;
+  color: #fff; }
+
+/*********************************************
+* HEADERS
+*********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Noto Sans", "Noto Sans CJK TC", sans-serif;
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 0; }
+
+.bible {
+  font-size: 35px;
+  margin-left: 40px;
+  margin-right: 20px;
+}
+
+.bible table {
+  margin-left: 0;
+  margin-right: 40px;
+}
+ 
+.song section {
+  background-color: rgba(102, 102, 102, 0.75);
+}
+
+.song p, 
+.song h4 {
+  margin: 0;
+  padding: 0;
+  text-shadow: 6px 6px 8px rgba(0,0,0,0.8);
+}
+
+section .text {
+  margin-left: 60px;
+  margin-right: 40px;
+  padding-right: 40px;
+  width: 90%;
+}
+
+#shortcut-control {
+  clear: both;
+  position: relative;
+  width: 200px;
+  height: 100px;
+  margin-top: -100px;
+  
+}
+
+#shortcut-control textarea {
+  font-size: 20px;
+  overflow-y: scroll;
+  resize: none;
+}

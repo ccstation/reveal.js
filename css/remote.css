@@ -1,0 +1,40 @@
+.remote_control  {
+  position:fixed;
+  bottom:0;
+  right:0;
+  width:100%;
+  height: 100px;
+  z-index:999;
+  text-align: center;
+}
+
+/* .remote_control a {
+  font-size: 20px;
+  color: #fff;
+} */
+
+.remote_control a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 32px;
+  margin: 10;
+}
+
+.remote_control a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.remote_control .previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.remote_control .next {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.remote_control .round {
+  border-radius: 50%;
+}

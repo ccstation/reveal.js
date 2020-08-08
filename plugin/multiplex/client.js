@@ -8,6 +8,11 @@
 		if (data.socketId !== socketId) { return; }
 		if( window.location.host === 'localhost:1947' ) return;
 
-		Reveal.setState(data.state);
+		if (data.state) {
+			Reveal.setState(data.state);
+		} else {
+			Reveal.dispatchEvent( data.type, { "action": data.event.action } );
+		}
+		
 	});
 }());
